@@ -1,6 +1,6 @@
 # AI CLI Config Helper
 
-一个用于诊断 AI 编程命令行工具配置问题的 Codex Skill。
+一个用于诊断 AI 编程命令行工具配置问题的 Codex Skill，同时也可以作为独立的本地配置诊断脚本工具包使用。
 
 它重点面向 Codex `config.toml`、OpenAI-compatible API、中转/代理服务、`base_url`、`model`、`model_provider`、`env_key`、API key 脱敏、配置备份与恢复等真实排障场景。
 
@@ -16,9 +16,41 @@
 - 使用了错误的模型名或中转服务模型别名。
 - 遇到 `401`、`403`、`404`、`model not found`、`timeout` 等错误时不知道从哪里排查。
 
-这个 skill 的目标是把这些配置问题变成一套可检查、可解释、可验证、可回滚的诊断流程。
+这个项目的目标是把这些配置问题变成一套可检查、可解释、可验证、可回滚的诊断流程。
 
 通俗说：它像一个“AI CLI 配置医生”，先做体检，再指出可能问题，最后给出安全修复建议。
+
+## 什么时候用 skill，什么时候用 scripts
+
+这个项目有两种用法：
+
+- 如果 Codex 已经能正常启动并加载 skill，可以直接作为 Codex Skill 使用。
+- 如果 Codex 还没配置好，甚至无法正常启动或加载 skill，就先直接运行 `scripts/` 里的 PowerShell 脚本。
+
+通俗说：
+
+```text
+Codex 能打开：用 skill，让 Codex 帮你解释和排查。
+Codex 还打不开：先用 scripts，本地检查 config.toml。
+```
+
+所以它不是只能在 Codex 里面用。对于小白来说，最开始可以先把它当成一个本地配置检查工具包。
+
+小白使用流程：
+
+```text
+1. 下载或 clone 这个仓库。
+2. 打开 PowerShell，进入 ai-cli-config-helper 文件夹。
+3. 运行 inspect_codex_config.ps1 检查自己的 config.toml。
+4. 根据报告修复 base_url、model_provider、env_key、环境变量等问题。
+5. Codex 能启动后，再使用 $ai-cli-config-helper 做更方便的诊断。
+```
+
+最小本地检查命令：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\inspect_codex_config.ps1 -Path "$env:USERPROFILE\.codex\config.toml" -CheckEnv
+```
 
 ## 核心功能
 

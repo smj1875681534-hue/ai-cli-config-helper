@@ -7,6 +7,8 @@ description: Help users configure, inspect, and troubleshoot AI coding CLI tools
 
 Diagnose AI CLI configuration problems and guide users to a safe fix. Treat this skill as a configuration doctor: inspect first, redact secrets, identify the likely provider/API mismatch, recommend a minimal correction, and verify the result.
 
+This project can be used in two modes. When Codex can already start and load skills, use it as `$ai-cli-config-helper`. When Codex is not configured enough to start or load skills, tell the user to run the bundled `scripts/` tools directly from PowerShell first, especially `scripts/inspect_codex_config.ps1`.
+
 ## MVP Scope
 
 Prioritize:

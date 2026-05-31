@@ -1,6 +1,6 @@
 # AI CLI Config Helper
 
-`ai-cli-config-helper` is a Codex skill for inspecting and troubleshooting AI coding CLI configuration problems. It focuses on Codex `config.toml`, Windows paths, OpenAI-compatible API providers, proxy or relay services, API key safety, `base_url`, `model`, `model_provider`, and common connection errors.
+`ai-cli-config-helper` is a Codex skill and standalone local diagnostics toolkit for inspecting and troubleshooting AI coding CLI configuration problems. It focuses on Codex `config.toml`, Windows paths, OpenAI-compatible API providers, proxy or relay services, API key safety, `base_url`, `model`, `model_provider`, and common connection errors.
 
 The skill works like a small configuration doctor:
 
@@ -10,6 +10,32 @@ The skill works like a small configuration doctor:
 4. Recommend the smallest safe fix.
 5. Back up before edits.
 6. Verify locally first, then run optional endpoint tests only with user approval.
+
+## When To Use The Skill Vs Scripts
+
+This project has two usage modes:
+
+- Use it as a Codex skill when Codex can already start and load skills.
+- Use the `scripts/` tools directly from PowerShell when Codex is not configured enough to start or load skills yet.
+
+In other words, the skill is convenient after Codex can run, but the local scripts are the bootstrap path for beginners who are still fixing their first `config.toml`.
+
+Beginner flow:
+
+```text
+1. Download or clone this repository.
+2. Open PowerShell in the ai-cli-config-helper folder.
+3. Run scripts/inspect_codex_config.ps1 against your config.toml.
+4. Fix the reported config issues.
+5. Start Codex.
+6. Use $ai-cli-config-helper for guided troubleshooting inside Codex.
+```
+
+Minimal local inspection command:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\inspect_codex_config.ps1 -Path "$env:USERPROFILE\.codex\config.toml" -CheckEnv
+```
 
 ## Quick Start
 
