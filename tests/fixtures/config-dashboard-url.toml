@@ -1,0 +1,7 @@
+model = "relay-model"
+model_provider = "relay"
+
+[model_providers.relay]
+name = "Relay"
+base_url = "https://relay.example.com/dashboard"
+env_key = "RELAY_API_KEY"

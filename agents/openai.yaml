@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI CLI Config Helper"
+  short_description: "Diagnose and safely fix AI CLI configuration issues"
+  default_prompt: "Use $ai-cli-config-helper to inspect and troubleshoot my Codex or OpenAI-compatible API configuration."

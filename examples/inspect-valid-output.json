@@ -1,0 +1,29 @@
+﻿{
+    "config_path":  "tests/fixtures/config-valid.toml",
+    "file_found":  true,
+    "parse_status":  "basic_parse_succeeded",
+    "active_profile":  null,
+    "profile_ids":  [
+                        "default"
+                    ],
+    "model":  "gpt-4.1",
+    "model_provider":  "openai",
+    "provider_ids":  [
+                         "openai"
+                     ],
+    "selected_provider":  {
+                              "id":  "openai",
+                              "source":  "top_level",
+                              "name":  "OpenAI",
+                              "base_url":  "https://api.openai.com/v1",
+                              "env_key":  "OPENAI_API_KEY",
+                              "env_value_status":  "not_checked"
+                          },
+    "raw_secret_detected":  false,
+    "raw_secret_fields":  [
+
+                          ],
+    "warnings":  [
+
+                 ]
+}

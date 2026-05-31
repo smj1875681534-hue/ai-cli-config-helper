@@ -1,0 +1,29 @@
+﻿{
+    "config_path":  "tests/fixtures/config-dashboard-url.toml",
+    "file_found":  true,
+    "parse_status":  "basic_parse_succeeded",
+    "active_profile":  null,
+    "profile_ids":  [
+
+                    ],
+    "model":  "relay-model",
+    "model_provider":  "relay",
+    "provider_ids":  [
+                         "relay"
+                     ],
+    "selected_provider":  {
+                              "id":  "relay",
+                              "source":  "top_level",
+                              "name":  "Relay",
+                              "base_url":  "https://relay.example.com/dashboard",
+                              "env_key":  "RELAY_API_KEY",
+                              "env_value_status":  "not_checked"
+                          },
+    "raw_secret_detected":  false,
+    "raw_secret_fields":  [
+
+                          ],
+    "warnings":  [
+                     "base_url looks like a web page or documentation URL, not an API endpoint."
+                 ]
+}
