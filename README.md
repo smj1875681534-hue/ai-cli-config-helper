@@ -15,10 +15,11 @@ The skill works like a small configuration doctor:
 
 This project has two usage modes:
 
-- Use it as a Codex skill when Codex can already start and load skills.
-- Use the `scripts/` tools directly from PowerShell when Codex is not configured enough to start or load skills yet.
+- If Codex cannot start or cannot load skills, run the `scripts/` tools directly from PowerShell.
+- If Codex can start but you are troubleshooting provider, API, model, `base_url`, `env_key`, or profile issues, use `$ai-cli-config-helper` for guided diagnosis.
+- If Codex works normally and you are not changing providers, models, profiles, or endpoints, you do not need to use this skill.
 
-In other words, the skill is convenient after Codex can run, but the local scripts are the bootstrap path for beginners who are still fixing their first `config.toml`.
+In other words, the local scripts are the bootstrap path for beginners who are still fixing their first `config.toml`; the Codex skill is for guided troubleshooting after Codex is available but configuration-related issues remain.
 
 Beginner flow:
 
@@ -28,7 +29,7 @@ Beginner flow:
 3. Run scripts/inspect_codex_config.ps1 against your config.toml.
 4. Fix the reported config issues.
 5. Start Codex.
-6. Use $ai-cli-config-helper for guided troubleshooting inside Codex.
+6. If provider/API/model/profile problems remain, use $ai-cli-config-helper for guided troubleshooting inside Codex.
 ```
 
 Minimal local inspection command:
